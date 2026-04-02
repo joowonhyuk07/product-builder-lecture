@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행운의 로또 번호 추천</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍀 행운의 로또 추천</h1>
+            <p>당신의 행운을 시험해 보세요!</p>
+        </header>
+
+        <main>
+            <div id="ball-container" class="ball-container">
+                <div class="placeholder-ball">?</div>
+                <div class="placeholder-ball">?</div>
+                <div class="placeholder-ball">?</div>
+                <div class="placeholder-ball">?</div>
+                <div class="placeholder-ball">?</div>
+                <div class="placeholder-ball">?</div>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label for="include-nums">포함할 번호 (쉼표로 구분)</label>
+                    <input type="text" id="include-nums" placeholder="예: 7, 21">
+                </div>
+                <div class="input-group">
+                    <label for="exclude-nums">제외할 번호 (쉼표로 구분)</label>
+                    <input type="text" id="exclude-nums" placeholder="예: 1, 45">
+                </div>
+                <button id="generate-btn" class="generate-btn">번호 생성하기</button>
+            </div>
+
+            <section class="history-section">
+                <h2>최근 생성 기록</h2>
+                <ul id="history-list">
+                    <!-- 기록이 여기에 추가됩니다 -->
+                </ul>
+                <button id="clear-history" class="clear-btn">기록 삭제</button>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
