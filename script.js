@@ -5,8 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generate-btn');
     const historyList = document.getElementById('history-list');
     const clearHistoryBtn = document.getElementById('clear-history');
+    const themeBtn = document.getElementById('theme-btn');
+
+    // Theme logic
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeBtn.textContent = '☀️ 라이트 모드';
+    }
+
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        themeBtn.textContent = isDark ? '☀️ 라이트 모드' : '🌙 다크 모드';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
 
     let history = JSON.parse(localStorage.getItem('lottoHistory')) || [];
+...
 
     // Initialize history display
     updateHistoryUI();
