@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let history = JSON.parse(localStorage.getItem('lottoHistory')) || [];
-...
 
     // Initialize history display
     updateHistoryUI();
